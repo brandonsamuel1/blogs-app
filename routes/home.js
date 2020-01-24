@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.send('HOME PAGE');
-});
+const postController = require('../controllers/posts');
+
+router.get('/', postController.getAllPosts);
 
 module.exports = router;
