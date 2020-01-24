@@ -8,6 +8,16 @@ exports.getAllPosts = (req, res, next) => {
         .catch(err => console.log(err))
 };
 
+exports.getSinglePost = (req, res, next) => {
+    const postId = req.params.id;
+    Post.findById(postId)
+        .then(post => {
+            console.log(post);
+            res.send(post);
+        })
+        .catch(err => console.log(err))
+}
+
 exports.postBlogPost = (req, res, next) => {
     const title = req.body.title;
     const content = req.body.content;

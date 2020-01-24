@@ -5,6 +5,8 @@ const postController = require('../controllers/posts');
 
 const Post = require('../models/post');
 
+router.get('/:id', postController.getSinglePost)
+
 router.get('/create', (req, res, next) => {
     res.send('CREATE A POST');
 });
