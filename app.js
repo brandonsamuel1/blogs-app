@@ -1,7 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost:27017/blog', { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(res => console.log('Connected to DB'))
+    .catch(err => console.log(err));
 
 const port = process.env.PORT || 8080;
 
