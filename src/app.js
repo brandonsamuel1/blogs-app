@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/blog', { useNewUrlParser: true, useU
     .then(res => console.log('Connected to DB'))
     .catch(err => console.log(err));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 const homeRoutes = require('./routes/home');
 const postRoutes = require('./routes/posts');
@@ -20,6 +20,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/blog-post', postRoutes);
 app.use(homeRoutes);
 
-app.listen(port, (req, res) => {
+app.listen(port, () => {
     console.log(`Server started on port ${port}`);
 });
