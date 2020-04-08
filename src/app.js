@@ -1,4 +1,5 @@
 const express = require('express');
+require('./db/mongoose')
 
 // Import Routes
 const userRoutes = require('./routes/users');
@@ -12,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.json())
 
-app.use('/blog-post', postRoutes);
+app.use('/posts', postRoutes);
 app.use(userRoutes);
 
 app.listen(port, () => {

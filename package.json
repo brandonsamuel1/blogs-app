@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.8.9"
+    "mongoose": "^5.8.9",
+    "validator": "^13.0.0"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
