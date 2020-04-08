@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.json())
 
-app.use('/posts', postRoutes);
+app.use(postRoutes);
 app.use(userRoutes);
 
 app.listen(port, () => {
