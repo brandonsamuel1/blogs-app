@@ -31,4 +31,21 @@ router.get('/users', async (req, res) => {
     }
 })
 
+// FETCH A USER
+router.get('/users/:id', async (req, res) => {
+    const _id = req.params.id;
+
+    try {
+        const user = await User.findById(_id)
+
+        if (!user) {
+            res.send('No user found')
+        }
+
+        res.status(200).send(user)
+    } catch (e) {
+        res.send(e)
+    }
+})
+
 module.exports = router;
