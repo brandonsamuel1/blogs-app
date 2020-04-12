@@ -12,7 +12,7 @@ router.post('/users', async (req, res) => {
 
         res.status(201).send(user)
     } catch (e) {
-        res.send(e)
+        res.status(400).send(e.message)
     }
 })
 
@@ -27,7 +27,7 @@ router.get('/users', async (req, res) => {
 
         res.status(200).send(user)
     } catch (e) {
-        res.send(e)
+        res.status(400).send(e.message)
     }
 })
 
@@ -62,6 +62,20 @@ router.delete('/users/:id', async (req, res) => {
         res.status(200).send(user)
     } catch (e) {
         res.status(400).send(e)
+    }
+})
+
+// LOGIN USER
+router.post('/login', async (req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+
+    try {
+        const user = await User.findByCredentials(email, password)
+
+        res.status(200).send(user)
+    } catch (e) {
+        res.send(e)
     }
 })
 
