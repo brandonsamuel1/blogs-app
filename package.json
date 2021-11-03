@@ -14,7 +14,7 @@
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
     "mongoose": "^5.8.9",
-    "validator": "^13.0.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
